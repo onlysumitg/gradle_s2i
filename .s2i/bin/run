@@ -3,6 +3,9 @@ echo "  >>>>1 <<<<"
 id -u
 current_user_id=$(id -u)
 echo $current_user_id
+
+rm -r /tmp/vertx-cache
+
 mkdir /tmp/vertx-cache
 chown 1001  /tmp/vertx-cache \
     && chmod "g+rwX" /tmp/vertx-cache  \
