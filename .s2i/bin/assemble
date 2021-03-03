@@ -65,5 +65,5 @@ chmod +x ${QUARKUS_HOME}
 chmod +x ${QUARKUS_HOME}/application
 
 chown 1001  /tmp/vertx-cache \
-    && chmod "g+rwX" /work  \
+    && chmod "g+rwX" /tmp/vertx-cache  \
     && chmod 775 /tmp/vertx-cache

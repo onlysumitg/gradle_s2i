@@ -5,7 +5,7 @@ current_user_id=$(id -u)
 echo $current_user_id
 
 chown 1001  /tmp/vertx-cache \
-    && chmod "g+rwX" /work  \
+    && chmod "g+rwX" /tmp/vertx-cache  \
     && chmod 775 /tmp/vertx-cache
 echo "  >>>>2 <<<<"
 
