@@ -6,17 +6,6 @@
 
 set -ex
 
-echo "----------------------------------------------------------s"
-current_user_id=$(id -u)
-echo "+++++++"
-echo $current_user_id
-
-echo  ${QUARKUS_HOME}
-echo "+++++++"
-printenv
-
-echo "----------------------------------------------------------e"
-
 #############################################
 # Configure maven - for a complete list of
 # supported values, please refer the module.yaml
@@ -40,9 +29,9 @@ fi
  if "$USE_GRADLE"; then
   BUILD_DIR=build
   mkdir -p build/libs
-  #  gradle build -Dquarkus.package.type=native
-  # gradle quarkusBuild -Dquarkus.package.type=uber-jar
-  # ./gradlew quarkusBuild -Dquarkus.package.type=uber-jar
+  #gradle build -Dquarkus.package.type=native
+  gradle quarkusBuild -Dquarkus.package.type=uber-jar
+
 else
   if [ -z "$ARTIFACT_DIR" ]; then
     BUILD_DIR=target
@@ -56,16 +45,8 @@ else
 
 fi
 
-#cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
-#chmod +x ${QUARKUS_HOME}
-#chmod +x ${QUARKUS_HOME}/application.jar
-
-cp -v ${BUILD_DIR}/*-runner ${QUARKUS_HOME}/application
+cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
 chmod +x ${QUARKUS_HOME}
-chmod +x ${QUARKUS_HOME}/application
+chmod +x ${QUARKUS_HOME}/application.jar
 
 
-
-chown 1001  /tmp/vertx-cache \
-    && chmod "g+rwX" /tmp/vertx-cache  \
-    && chmod 775 /tmp/vertx-cache

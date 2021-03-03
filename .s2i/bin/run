@@ -6,9 +6,9 @@ echo $current_user_id
 
 rm -r /tmp/vertx-cache
 
-echo">>>>>>>>>>>>>>>>>"
+echo ">>>>>>>>>>>>>>>>>"
 ls -l /tmp/vertx-cache
-echo"<<<<<<<<<<<>>>>>>>>>>>"
+echo "<<<<<<<<<<<>>>>>>>>>>>"
 
 mkdir /tmp/vertx-cache
 chown 1001  /tmp/vertx-cache \
