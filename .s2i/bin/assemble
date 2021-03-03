@@ -66,6 +66,6 @@ fi
 
 
 
-chown 1001  /tmp/vertx-cache \
-    && chmod "g+rwX" /tmp/vertx-cache  \
-    && chmod 775 /tmp/vertx-cache
+#chown 1001  /tmp/vertx-cache \
+#    && chmod "g+rwX" /tmp/vertx-cache  \
+#    && chmod 775 /tmp/vertx-cache
