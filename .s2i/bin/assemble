@@ -27,6 +27,8 @@ CONFIGURE_SCRIPTS=(
 source ${QUARKUS_HOME}/.m2/configure.sh
 #############################################
 
+export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
+
 SRC_DIR=${SRC_DIR:-'/tmp/src/'}
 
 cd $SRC_DIR
