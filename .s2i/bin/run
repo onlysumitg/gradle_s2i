@@ -9,5 +9,7 @@ chown 1001  /tmp/vertx-cache \
     && chmod 775 /tmp/vertx-cache
 echo "  >>>>2 <<<<"
 
+rm /tmp/vertx-cache/*
+
 exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0
 # 1 java -jar ${QUARKUS_HOME}/application.jar
