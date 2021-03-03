@@ -1,6 +1,9 @@
 #!/bin/sh
-echo "  >>>> <<<<"
+echo "  >>>>1 <<<<"
 id -u
+
+echo $current_user_id
+echo "  >>>>2 <<<<"
 
 exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0
 # 1 java -jar ${QUARKUS_HOME}/application.jar

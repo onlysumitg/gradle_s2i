@@ -7,8 +7,9 @@
 set -ex
 
 echo "----------------------------------------------------------s"
-id -u
+current_user_id=$(id -u)
 echo "+++++++"
+echo $current_user_id
 
 echo  ${QUARKUS_HOME}
 echo "+++++++"
