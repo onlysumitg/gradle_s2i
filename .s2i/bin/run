@@ -4,7 +4,7 @@ id -u
 current_user_id=$(id -u)
 echo $current_user_id
 
-chown  mkdir /tmp/vertx-cache \
+   mkdir /tmp/vertx-cache \
     && chmod 775 /tmp/vertx-cache
 echo "  >>>>2 <<<<"
 
