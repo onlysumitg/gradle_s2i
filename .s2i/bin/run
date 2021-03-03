@@ -1,5 +1,5 @@
 #!/bin/sh
 echo "  >>>> <<<<"
 
-#exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0
+exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0
 # 1 java -jar ${QUARKUS_HOME}/application.jar
