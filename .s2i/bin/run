@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "  >>>>1 <<<<"
+export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
 #id -u
 #current_user_id=$(id -u)
 #echo $current_user_id

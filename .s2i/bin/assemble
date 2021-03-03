@@ -5,7 +5,7 @@
 # a TODO future PRODUCTION version of this would probably want to re-use that script...
 
 set -ex
-
+export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
 echo "----------------------------------------------------------s"
 current_user_id=$(id -u)
 echo "+++++++"
@@ -27,7 +27,7 @@ CONFIGURE_SCRIPTS=(
 source ${QUARKUS_HOME}/.m2/configure.sh
 #############################################
 
-export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
+
 
 SRC_DIR=${SRC_DIR:-'/tmp/src/'}
 
