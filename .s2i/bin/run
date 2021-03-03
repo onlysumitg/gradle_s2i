@@ -6,6 +6,10 @@ echo $current_user_id
 
 rm -r /tmp/vertx-cache
 
+echo">>>>>>>>>>>>>>>>>"
+ls -l /tmp/vertx-cache
+echo"<<<<<<<<<<<>>>>>>>>>>>"
+
 mkdir /tmp/vertx-cache
 chown 1001  /tmp/vertx-cache \
     && chmod "g+rwX" /tmp/vertx-cache  \
