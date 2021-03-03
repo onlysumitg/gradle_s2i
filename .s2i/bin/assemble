@@ -55,6 +55,10 @@ else
 
 fi
 
-cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
+#cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
+#chmod +x ${QUARKUS_HOME}
+#chmod +x ${QUARKUS_HOME}/application.jar
+
+cp -v ${BUILD_DIR}/*-runner ${QUARKUS_HOME}/application
 chmod +x ${QUARKUS_HOME}
-chmod +x ${QUARKUS_HOME}/application.jar
+chmod +x ${QUARKUS_HOME}/application
