@@ -4,10 +4,8 @@ id -u
 current_user_id=$(id -u)
 echo $current_user_id
 
-chown $current_user_id /work \
-    && chmod "g+rwX" /work \
+chown $current_user_id  \
     && mkdir /tmp/vertx-cache \
-    && chown $current_user_id:root /work \
     && chmod 775 /tmp/vertx-cache
 echo "  >>>>2 <<<<"
 
