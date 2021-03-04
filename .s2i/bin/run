@@ -1,23 +1,4 @@
 #!/bin/sh
-echo "  >>>>1 <<<<"
-export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
-#id -u
-#current_user_id=$(id -u)
-#echo $current_user_id
-#
-#rm -r /tmp/vertx-cache
-#
-#echo ">>>>>>>>>>>>>>>>>"
-#ls -l /tmp/vertx-cache
-#echo "<<<<<<<<<<<>>>>>>>>>>>"
-#
-#mkdir /tmp/vertx-cache
-#chown 1001  /tmp/vertx-cache \
-#    && chmod "g+rwX" /tmp/vertx-cache  \
-#    && chmod 775 /tmp/vertx-cache
-#echo "  >>>>2 <<<<"
-#
-#rm /tmp/vertx-cache/*
 
-exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp -Dvertx.disableFileCaching=true
-# 1 java -jar ${QUARKUS_HOME}/application.jar
+exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.disableFileCaching=true
+#exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp -Dvertx.disableFileCaching=true

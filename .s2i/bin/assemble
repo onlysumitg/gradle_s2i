@@ -4,18 +4,6 @@
 # and loosely inspired by fabric8io-images/s2i's assemble script, but **MUCH** simplified;
 # a TODO future PRODUCTION version of this would probably want to re-use that script...
 
-set -ex
-export JAVA_OPTS='-Dvertx.cacheDirBase=/tmp/vertx'
-echo "----------------------------------------------------------s"
-current_user_id=$(id -u)
-echo "+++++++"
-echo $current_user_id
-
-echo  ${QUARKUS_HOME}
-echo "+++++++"
-printenv
-
-echo "-----------------------------------------------------------e"
 
 #############################################
 # Configure maven - for a complete list of
@@ -42,9 +30,8 @@ fi
  if "$USE_GRADLE"; then
   BUILD_DIR=build
   mkdir -p build/libs
-    gradle build -Dquarkus.package.type=native -Djava.io.tmpdir=/tmp -Dvertx.cacheDirBase=/tmp/vertx
-  # gradle quarkusBuild -Dquarkus.package.type=uber-jar
-  # ./gradlew quarkusBuild -Dquarkus.package.type=uber-jar
+    gradle build -Dquarkus.package.type=native
+
 else
   if [ -z "$ARTIFACT_DIR" ]; then
     BUILD_DIR=target
@@ -58,16 +45,6 @@ else
 
 fi
 
-#cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
-#chmod +x ${QUARKUS_HOME}
-#chmod +x ${QUARKUS_HOME}/application.jar
-
 cp -v ${BUILD_DIR}/*-runner ${QUARKUS_HOME}/application
 chmod +x ${QUARKUS_HOME}
 chmod +x ${QUARKUS_HOME}/application
-
-
-
-#chown 1001  /tmp/vertx-cache \
-#    && chmod "g+rwX" /tmp/vertx-cache  \
-#    && chmod 775 /tmp/vertx-cache
