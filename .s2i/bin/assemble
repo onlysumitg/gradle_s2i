@@ -27,16 +27,19 @@ else
     USE_GRADLE=true
 fi
 
-if [ "$BUILD_TYPE" == "jar" ]; then
-   echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  building jar"
-else
-    echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  building native "
-fi
+
 
  if "$USE_GRADLE"; then
   BUILD_DIR=build
   mkdir -p build/libs
-  gradle build -Dquarkus.package.type=native
+  if [ "$BUILD_TYPE" == "jar" ]; then
+   echo "Building jar"
+   gradle quarkusBuild -Dquarkus.package.type=uber-jar
+  else
+    echo "Building native "
+    gradle build -Dquarkus.package.type=native
+  fi
+
 
 else
   if [ -z "$ARTIFACT_DIR" ]; then
@@ -51,6 +54,13 @@ else
 
 fi
 
-cp -v ${BUILD_DIR}/*-runner ${QUARKUS_HOME}/application
-chmod +x ${QUARKUS_HOME}
-chmod +x ${QUARKUS_HOME}/application
+ if [ "$BUILD_TYPE" == "jar" ]; then
+   cp -v ${BUILD_DIR}/*-runner.jar ${QUARKUS_HOME}/application.jar
+   chmod +x ${QUARKUS_HOME}
+   chmod +x ${QUARKUS_HOME}/application.jar
+
+else
+     cp -v ${BUILD_DIR}/*-runner ${QUARKUS_HOME}/application
+     chmod +x ${QUARKUS_HOME}
+     chmod +x ${QUARKUS_HOME}/application
+fi
