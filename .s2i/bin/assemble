@@ -30,7 +30,7 @@ fi
  if "$USE_GRADLE"; then
   BUILD_DIR=build
   mkdir -p build/libs
-    gradle build -Dquarkus.package.type=native
+  gradle build -Dquarkus.package.type=native
 
 else
   if [ -z "$ARTIFACT_DIR" ]; then
