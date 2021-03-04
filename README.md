@@ -1,5 +1,7 @@
 # gradle_s2i project
 
+oc new-app my-quarkus-s2i:21.0-java11~https://github.com/onlysumitg/gradle_s2i.git#main -e JAVA_OPTS="-Dvertx.cacheDirBase=/tmp" -e JAVA_OPTIONS='-Dvertx.cacheDirBase=/tmp'
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
