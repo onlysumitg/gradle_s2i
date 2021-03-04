@@ -1,4 +1,5 @@
 #!/bin/sh
 
-exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.disableFileCaching=true
-#exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp -Dvertx.disableFileCaching=true
+#exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.disableFileCaching=true
+#exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp
+exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp -Dvertx.disableFileCaching=true
