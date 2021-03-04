@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ "$BUILD_TYPE" == "jar" ]; then
+   echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  running jar"
+else
+    echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  running native "
+fi
+
 #exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.disableFileCaching=true
 exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp
 #exec ${QUARKUS_HOME}/application -Dquarkus.http.host=0.0.0.0 -Dvertx.cacheDirBase=/tmp -Dvertx.disableFileCaching=true

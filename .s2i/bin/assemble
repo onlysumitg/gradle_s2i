@@ -27,6 +27,12 @@ else
     USE_GRADLE=true
 fi
 
+if [ "$BUILD_TYPE" == "jar" ]; then
+   echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  building jar"
+else
+    echo ">>>>>>>>>>>>>>>>>>>>>>>><<<<  building native "
+fi
+
  if "$USE_GRADLE"; then
   BUILD_DIR=build
   mkdir -p build/libs
